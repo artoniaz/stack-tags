@@ -2,6 +2,6 @@
 
 Simple task to get stack tags data and display it in a paginated table. 
 
-Install: npm ci
-Run: npm start
-Storybook: npm run storybook
+<p>Install: npm ci</p>
+<p>Run: npm start</p>
+<p></p>Storybook: npm run storybook</p>
