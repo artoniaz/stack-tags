@@ -1,33 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Status } from "../../utils/stateStatus";
 import tagsActions from "./tagsActions";
-import InitialState from "../../models/InitStateModel";
-import { TagsDataModel } from "../../models/TagsDataModel";
+import { FetchState } from "../../models/FetchStateModel";
+import { TagsFetchResponseModel } from "../../models/TagsDataModel";
 
-const initialState: InitialState<TagsDataModel> = {
-  data: {
-    items: [],
-    hasMore: false,
-  },
-  status: Status.Initial,
-  error: null,
-};
+const initialState: FetchState<TagsFetchResponseModel> = { status: "Initial" };
 
 export const tagsSlice = createSlice({
   name: "tags",
-  initialState,
+  initialState: initialState as FetchState<TagsFetchResponseModel>,
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(tagsActions.getTags.pending, (state) => {
-      state.status = Status.Loading;
+    builder.addCase(tagsActions.getTags.pending, () => {
+      return { status: "Loading" };
     });
-    builder.addCase(tagsActions.getTags.fulfilled, (state, action) => {
-      state.status = Status.Success;
-      state.data = action.payload;
+    builder.addCase(tagsActions.getTags.fulfilled, (_state, action) => {
+      return { status: "Success", data: action.payload };
     });
-    builder.addCase(tagsActions.getTags.rejected, (state, action) => {
-      state.status = Status.Failed;
-      state.error = action.error.message!;
+    builder.addCase(tagsActions.getTags.rejected, (_state, action) => {
+      return { status: "Failed", error: action.error.message! };
     });
   },
 });

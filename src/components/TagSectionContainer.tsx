@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import TagQueryContainer from "../features/tags/TagQueryContainer";
-import TagTableContainer from "./TagTableContainer";
+import TagTableContainer from "../features/tags/TagTableContainer";
 
 const TagSectionContainer = () => {
   return (

@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { Status } from "../utils/stateStatus";
+import { Status } from "../models/FetchStateModel";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { IconButton } from "@mui/material";
@@ -24,14 +24,14 @@ const PaginationContainer = ({
     <Box>
       <IconButton
         onClick={handleBackButton}
-        disabled={currentPage === 1 || status === Status.Loading}
+        disabled={currentPage === 1 || status === "Loading"}
       >
         <ArrowBackIosIcon />
       </IconButton>
       {currentPage}
       <IconButton
         onClick={handleNextButton}
-        disabled={!hasMore || status === Status.Loading}
+        disabled={!hasMore || status === "Loading"}
       >
         <ArrowForwardIosIcon />
       </IconButton>

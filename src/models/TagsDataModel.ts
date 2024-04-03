@@ -1,6 +1,8 @@
-import { TagModel } from "./TagModel";
-
-export interface TagsDataModel {
+export interface TagModel {
+  name: string;
+  count: number;
+}
+export interface TagsFetchResponseModel {
   items: TagModel[];
   hasMore: boolean;
 }

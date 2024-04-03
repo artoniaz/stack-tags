@@ -1,5 +1,5 @@
 import { TableCell, TableRow, Typography } from "@mui/material";
-import { TagModel } from "../models/TagModel";
+import { TagModel } from "../models/TagsDataModel";
 
 const TabTableRow = ({ tag }: { tag: TagModel }) => {
   return (

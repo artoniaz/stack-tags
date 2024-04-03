@@ -1,5 +1,5 @@
 import { TableCell, TableRow, TableHead } from "@mui/material";
-import { TagModel } from "../models/TagModel";
+import { TagModel } from "../models/TagsDataModel";
 
 interface HeadCell {
   id: keyof TagModel;
