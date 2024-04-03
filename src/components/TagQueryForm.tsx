@@ -101,7 +101,9 @@ const TagQueryForm = ({
             width: { xs: "100%", md: "150px" },
           }}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={status === "Loading"}>
+          Submit
+        </Button>
       </Box>
       <PaginationContainer
         status={status}
