@@ -1,0 +1,13 @@
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import tagsSlice from "./tags/tagsSlice";
+
+const combinedReducers = combineReducers({
+  tags: tagsSlice,
+});
+
+export const store = configureStore({
+  reducer: combinedReducers,
+});
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
